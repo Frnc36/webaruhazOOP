@@ -1,6 +1,7 @@
 export default class Aru{
     #obj = {};
     #index = 0;
+    #sorElem;
 
     constructor(obj={nev,ar,mennyiseg}, index, szuloElem){
         this.#obj = obj;
@@ -17,27 +18,27 @@ export default class Aru{
     }
 
     esemeny(){
-        const gombElem = document.querySelectorAll("button");
-
-        gombElem.forEach((gomb, index)=>{
-            gomb.addEventListener("click", (event)=>{
-            console.log("index ", index);
-
+        const gombElem = this.#sorElem.querySelector(" button");
+        
+            gombElem.addEventListener("click", ()=>{
+            console.log("index ", this.#index);
             this.sajatEsemeny();
-        })
-        })
+        });
+        
         
     }
 
     megjelenit(){
-        let kod = `<table>
-                    <tr>
+        let kod = `<tr class="align-middle">
                         <td>${this.#obj.nev}</td>
                         <td>${this.#obj.ar}</td>
                         <td>${this.#obj.mennyiseg}</td>
-                    </tr>
-                    </table>`;
+                        <td><button class="btn btn-danger btn-sm">Törlés</button></td>
+                    </tr>`;
         this.szuloElem.insertAdjacentHTML("beforeend", kod);
+
+        this.#sorElem = this.szuloElem.lastElementChild;
+
     }
 
     getObj(){

@@ -7,10 +7,38 @@ export const ADATLISTA=[
         kep: "termekepek/guluzsiraf.png" 
     },
     {
-        nev: "Trixie Játék Tüskés Gumilabda szett",
+        nev: "Tüskés Gumilabda szett",
         ar: "1.090 FT",
         mennyiseg: 11,
         jellemzo: "Kis méretű, tüskés gumilabda cicák, tengerimalacok és egyéb kisállatok részére.",
         kep: "termekepek/labdak.png" 
+    },
+    {
+        nev: "Macskajáték 2db Neon Labda",
+        ar: "1.690 FT",
+        mennyiseg: 6,
+        jellemzo: "Szerezz boldog pillanatokat a cicádnak ezzel a vidám, szemkápráztató neonlabdával",
+        kep: "termekepek/tuskeslabda.png" 
+    },
+    {
+        nev: "Macska Pálca Egérrel",
+        ar: "690 FT",
+        mennyiseg: 10,
+        jellemzo: "Játék házi kedvencek részére. Anyaga: az állat szempontjából biztonságos anyagból készült (gumi, latex, műanyag, plüss, fa vagy fém). Ne hagyja kedvencét felügyelet nélkül a játékkal!",
+        kep: "termekepek/egerjatek.png" 
+    },
+    {
+        nev: "Játék Egér",
+        ar: "690 FT",
+        mennyiseg: 8,
+        jellemzo: "Anyaga: az állat szempontjából biztonságos anyagból készült (gumi, latex, műanyag, plüs, fa vagy fém) Ne hagyja felügyelet nélkül a játékkal.",
+        kep: "termekepek/plusseger.png" 
+    },
+    {
+        nev: "Macskapálca",
+        ar: "1.090 FT",
+        mennyiseg: 5,
+        jellemzo: "A Trixie macskapálca a tökéletes játék a vadászösztönnel teli cicák számára. A strapabíró pálca végén lévő csábító játékok, mint a plüss egér, madár vagy toll, garantáltan felkeltik a macska figyelmét.",
+        kep: "termekepek/palca.png" 
     }
 ]
