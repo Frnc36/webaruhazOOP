@@ -29,12 +29,29 @@ export default class Aru{
     }
 
     megjelenit(){
-        let kod = `<tr class="align-middle">
+        let kod = `<tr class="align-middle data-index="${this.#index}">
                         <td>${this.#obj.nev}</td>
                         <td>${this.#obj.ar}</td>
-                        <td>${this.#obj.mennyiseg}</td>
-                        <td><button class="btn btn-danger btn-sm">Törlés</button></td>
-                    </tr>`;
+
+                    <td style="width:150px; max-width:150px;">
+                        <div class="d-flex align-items-center justify-content-between w-100 overflow-hidden">
+                            
+                            <button style="width:45px;" class="btn btn-outline-danger btn-sm minus">-</button>
+                            
+                            <span class="text-center flex-grow-1 mennyiseg">
+                                ${this.#obj.mennyiseg}
+                            </span>
+                            
+                            <button style="width:45px;" class="btn btn-outline-success btn-sm plus">+</button>
+                            
+                        </div>
+                    </td>
+
+                    <td style="width:140px; max-width:140px;">
+                    <button style="width:100%;" class="btn btn-danger btn-sm torles">
+                        Törlés
+                    </button></td>`;
+
         this.szuloElem.insertAdjacentHTML("beforeend", kod);
 
         this.#sorElem = this.szuloElem.lastElementChild;
