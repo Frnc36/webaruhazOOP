@@ -50,6 +50,11 @@ export default class Aru{
                     <td style="width:140px; max-width:140px;">
                     <button style="width:100%;" class="btn btn-danger btn-sm torles">
                         Törlés
+                    </button></td> 
+                    
+                    <td style="width:140px; max-width:140px;">
+                    <button style="width:100%;" class="btn btn-secondary btn-sm vissza">
+                        Visszavonás
                     </button></td>`;
 
         this.szuloElem.insertAdjacentHTML("beforeend", kod);
