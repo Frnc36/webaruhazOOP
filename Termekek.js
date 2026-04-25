@@ -5,7 +5,7 @@ export default class Termekek {
   constructor(lista, szuloElem) {
     this.#lista = lista;
     this.szuloElem = szuloElem;
-    this.szuloElem.innerHTML = "";
+     this.szuloElem.innerHTML = "";
     this.megjelenit();
   }
 
