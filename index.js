@@ -1,27 +1,33 @@
-import {ADATLISTA} from "./adat.js";
-import {tablazatFeltoltes, minusGomb, plusGGomb, torlesGomb, visszaGomb, sajatEsemeny, szuresek, kartyakFeltoltes} from "./fuggvenyek.js";
+import { ADATLISTA } from "./adat.js";
+import {
+  tablazatFeltoltes,
+  minusGomb,
+  plusGGomb,
+  torlesGomb,
+  visszaGomb,
+  sajatEsemeny,
+  szuresek,
+  kartyakFeltoltes,
+  kosarInit,
+} from "./fuggvenyek.js";
 
-
-
-/* Public  */
+/* Public */
 
 import Termekek from "./Termekek.js";
 
 kartyakFeltoltes(ADATLISTA);
 szuresek(ADATLISTA, Termekek);
-
-
+kosarInit(ADATLISTA);
 
 /* Admin */
 
 import Aruk from "./Aruk.js";
 
-tablazatFeltoltes(ADATLISTA,Aruk);
+tablazatFeltoltes(ADATLISTA, Aruk);
 sajatEsemeny();
 minusGomb(ADATLISTA);
 plusGGomb(ADATLISTA);
 torlesGomb();
 visszaGomb();
-
 szuresek(ADATLISTA, Aruk);
 

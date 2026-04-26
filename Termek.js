@@ -33,4 +33,4 @@ export default class Termek {
   getObj() {
     return this.#obj;
   }
-} //class
+}

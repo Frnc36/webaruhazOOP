@@ -128,3 +128,93 @@ export function szuresek(ADATLISTA, osztaly){
 
     })
 }
+
+let kosar = [];
+
+export function kosarInit(ADATLISTA) {
+    const kosarUritesGomb = document.getElementById("kosarUrites");
+    if (kosarUritesGomb) {
+        kosarUritesGomb.addEventListener("click", () => {
+            kosar = [];
+            kosarMegjelenit(ADATLISTA);
+        });
+    }
+    
+    document.addEventListener("click", (e) => {
+        if (e.target.classList.contains("kosar-gomb")) {
+            const index = parseInt(e.target.dataset.index);
+            const termek = ADATLISTA[index];
+            const kosarMennyiseg = kosar.filter(item => item.index === index).length;
+            
+            if (kosarMennyiseg < termek.mennyiseg) {
+                kosar.push({
+                    index: index,
+                    nev: termek.nev,
+                    ar: parseInt(termek.ar.replace(/[^0-9]/g, ""))
+                });
+                kosarMegjelenit(ADATLISTA);
+            } else {
+                alert("Nincs elegendő készlet!");
+            }
+        }
+        
+        if (e.target.classList.contains("kosar-torles") || e.target.closest(".kosar-torles")) {
+            const gomb = e.target.closest(".kosar-torles");
+            if (gomb) {
+                const index = parseInt(gomb.dataset.index);
+                kosar.splice(index, 1);
+                kosarMegjelenit(ADATLISTA);
+            }
+        }
+    });
+}
+
+function kosarMegjelenit(ADATLISTA) {
+    const kosarLista = document.getElementById("kosarLista");
+    const kosarDarabSpan = document.getElementById("kosarDarab");
+    const kosarOsszegSpan = document.getElementById("kosarOsszeg");
+    
+    if (!kosarLista) return;
+    
+    let osszeg = 0;
+    
+    if (kosar.length === 0) {
+        kosarLista.innerHTML = '<div class="text-center text-muted py-4">A kosár üres</div>';
+        if (kosarDarabSpan) kosarDarabSpan.textContent = "0";
+        if (kosarOsszegSpan) kosarOsszegSpan.textContent = "0 FT";
+        return;
+    }
+    
+    const csoportositva = {};
+    kosar.forEach((item, idx) => {
+        const key = item.index;
+        if (!csoportositva[key]) {
+            csoportositva[key] = { ...item, darab: 0 };
+        }
+        csoportositva[key].darab++;
+    });
+    
+    let html = "";
+    let counter = 0;
+    for (const key in csoportositva) {
+        const item = csoportositva[key];
+        const reszOsszeg = item.ar * item.darab;
+        osszeg += reszOsszeg;
+        
+        html += `
+            <div class="list-group-item kosar-tetel d-flex justify-content-between align-items-center">
+                <div class="flex-grow-1">
+                    <strong>${item.nev}</strong>
+                    <small>${item.ar} FT × ${item.darab} db</small>
+                    <small>= ${reszOsszeg} FT</small>
+                </div>
+                <button class="btn btn-sm btn-outline-danger kosar-torles" data-index="${counter}">✕</button>
+            </div>
+        `;
+        counter++;
+    }
+    
+    kosarLista.innerHTML = html;
+    if (kosarDarabSpan) kosarDarabSpan.textContent = kosar.length;
+    if (kosarOsszegSpan) kosarOsszegSpan.textContent = osszeg + " FT";
+}
