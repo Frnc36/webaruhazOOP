@@ -5,7 +5,7 @@ export const ADATLISTA=[
         mennyiseg: 14,
         jellemzo: "Macskamentával bevont műanyag labda macskáknak. A labdában csengőt rejtettünk el, ezáltal kedvence vadászösztöne fokozható.",
         kep: "termekepek/guluzsiraf.png",
-        kategoria: "plüss" 
+        kategoria: "Plüss" 
     },
     {
         nev: "Tüskés Gumilabda szett",
@@ -13,7 +13,7 @@ export const ADATLISTA=[
         mennyiseg: 11,
         jellemzo: "Kis méretű, tüskés gumilabda cicák, tengerimalacok és egyéb kisállatok részére.",
         kep: "termekepek/labdak.png",
-        kategoria: "labda"  
+        kategoria: "Labda"  
     },
     {
         nev: "Macskajáték 2db Neon Labda",
@@ -21,7 +21,7 @@ export const ADATLISTA=[
         mennyiseg: 6,
         jellemzo: "Szerezz boldog pillanatokat a cicádnak ezzel a vidám, szemkápráztató neonlabdával",
         kep: "termekepek/tuskeslabda.png",
-        kategoria: "labda" 
+        kategoria: "Labda" 
     },
     {
         nev: "Macska Pálca Egérrel",
@@ -29,7 +29,7 @@ export const ADATLISTA=[
         mennyiseg: 10,
         jellemzo: "Játék házi kedvencek részére. Anyaga: az állat szempontjából biztonságos anyagból készült (gumi, latex, műanyag, plüss, fa vagy fém). Ne hagyja kedvencét felügyelet nélkül a játékkal!",
         kep: "termekepek/egerjatek.png",
-        kategoria: "pálca" 
+        kategoria: "Pálca" 
     },
     {
         nev: "Játék Egér",
@@ -37,7 +37,7 @@ export const ADATLISTA=[
         mennyiseg: 8,
         jellemzo: "Anyaga: az állat szempontjából biztonságos anyagból készült (gumi, latex, műanyag, plüs, fa vagy fém) Ne hagyja felügyelet nélkül a játékkal.",
         kep: "termekepek/plusseger.png",
-        kategoria: "plüss" 
+        kategoria: "Plüss" 
     },
     {
         nev: "Macskapálca",
@@ -45,6 +45,6 @@ export const ADATLISTA=[
         mennyiseg: 5,
         jellemzo: "A Trixie macskapálca a tökéletes játék a vadászösztönnel teli cicák számára. A strapabíró pálca végén lévő csábító játékok, mint a plüss egér, madár vagy toll, garantáltan felkeltik a macska figyelmét.",
         kep: "termekepek/palca.png",
-        kategoria: "pálca" 
+        kategoria: "Pálca" 
     }
 ]

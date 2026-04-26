@@ -1,19 +1,27 @@
 import {ADATLISTA} from "./adat.js";
+import {tablazatFeltoltes, minusGomb, plusGGomb, torlesGomb, visszaGomb, sajatEsemeny, szuresek, kartyakFeltoltes} from "./fuggvenyek.js";
+
+
+
 /* Public  */
+
 import Termekek from "./Termekek.js";
-const KARTYAKELEM = document.querySelector(".kartyak");
-if (KARTYAKELEM) {
-    new Termekek(ADATLISTA, KARTYAKELEM);
-}
+
+kartyakFeltoltes(ADATLISTA);
+szuresek(ADATLISTA, Termekek);
+
+
 
 /* Admin */
 
-import { tablazatFeltoltes, minusGomb, plusGGomb, torlesGomb, visszaGomb, sajatEsemeny} from "./fuggvenyek.js";
+import Aruk from "./Aruk.js";
 
-tablazatFeltoltes(ADATLISTA);
+tablazatFeltoltes(ADATLISTA,Aruk);
 sajatEsemeny();
 minusGomb(ADATLISTA);
 plusGGomb(ADATLISTA);
 torlesGomb();
 visszaGomb();
+
+szuresek(ADATLISTA, Aruk);
 

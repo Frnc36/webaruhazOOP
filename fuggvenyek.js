@@ -1,9 +1,17 @@
-import Aruk from "./Aruk.js";
+import Termekek from "./Termekek.js";
 
-export function tablazatFeltoltes(ADATLISTA){
+export function kartyakFeltoltes(ADATLISTA) {
+    const KARTYAKELEM = document.querySelector(".kartyak");
+
+    if (KARTYAKELEM) {
+        new Termekek(ADATLISTA, KARTYAKELEM);
+    }
+}
+
+export function tablazatFeltoltes(ADATLISTA, osztaly){
     const tablazatElem = document.querySelector(".tablazat_tartalom");
     if (tablazatElem) {
-        new Aruk(ADATLISTA, tablazatElem);
+        new osztaly(ADATLISTA, tablazatElem);
     }
 }
 
@@ -96,4 +104,27 @@ export function visszaGomb() {
         console.log("visszaállítva");
     });
 });
+}
+
+export function szuresek(ADATLISTA, osztaly){
+    const szuresGombElemek = document.querySelectorAll(".szures button")
+    szuresGombElemek.forEach(function (button){
+
+        button.addEventListener("click", function(event){
+            let szurt = event.target.innerText
+
+            let szurtLista;
+
+            if (szurt === "Összes") {
+                szurtLista = ADATLISTA; // teljes lista
+            } else {
+                szurtLista = ADATLISTA.filter(function(a){
+                    return a.kategoria === szurt;
+                });
+            }
+            tablazatFeltoltes(szurtLista, osztaly);
+            kartyakFeltoltes(szurtLista,osztaly);
+        })
+
+    })
 }
