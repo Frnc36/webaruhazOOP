@@ -9,6 +9,7 @@ import {
   szuresek,
   kartyakFeltoltes,
   kosarInit,
+  rendezes,
 } from "./fuggvenyek.js";
 
 /* Public */
@@ -17,6 +18,7 @@ import Termekek from "./Termekek.js";
 
 kartyakFeltoltes(ADATLISTA);
 szuresek(ADATLISTA, Termekek);
+rendezes(ADATLISTA,Termekek);
 kosarInit(ADATLISTA);
 
 /* Admin */
@@ -30,4 +32,5 @@ plusGGomb(ADATLISTA);
 torlesGomb();
 visszaGomb();
 szuresek(ADATLISTA, Aruk);
+rendezes(ADATLISTA,Aruk);
 

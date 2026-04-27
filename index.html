@@ -25,14 +25,25 @@
         </nav>
         
         <!-- Szűrők -->
-        <div class="szures container mt-3">
-            <div class="d-flex justify-content-center gap-3">
-                <button class="btn bg-white text-dark border border-dark">Összes</button>
-                <button class="btn bg-white text-dark border border-dark">Plüss</button>
-                <button class="btn bg-white text-dark border border-dark">Pálca</button>
-                <button class="btn bg-white text-dark border border-dark">Labda</button>
+        <section class="szures mb-1">
+            <p class="mb-1 text-center fw-bold fs-5">Szűrők</p>
+            <div class="d-flex justify-content-center  gap-3">
+                <button class="btn btn-outline-dark">Összes</button>
+                <button class="btn btn-outline-dark">Plüss</button>
+                <button class="btn btn-outline-dark">Pálca</button>
+                <button class="btn btn-outline-dark">Labda</button>
             </div>
-        </div>
+        </section>
+
+        <section class="rendezes mb-1">
+            <p class="mb-1 text-center fw-bold fs-5">Rendezés</p>
+            <div class="d-flex justify-content-center  gap-3">
+                <button class="btn btn-outline-dark" id="nev_no">Név (A→Z)</button>
+                <button class="btn btn-outline-dark" id="nev_csokk">Név (Z→A)</button>
+                <button class="btn btn-outline-dark" id="ar_no">Ár (alacsony → magas)</button>
+                <button class="btn btn-outline-dark" id="ar_csokk">Ár (magas → alacsony)</button>
+            </div>
+        </section>
 
         <!-- Termékek és kosár -->
         <div class="container py-4">
