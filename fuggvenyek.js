@@ -218,3 +218,51 @@ function kosarMegjelenit(ADATLISTA) {
     if (kosarDarabSpan) kosarDarabSpan.textContent = kosar.length;
     if (kosarOsszegSpan) kosarOsszegSpan.textContent = osszeg + " FT";
 }
+
+function arSzam(ertek) {
+    return Number(ertek.replace(".", "").replace("FT", "").trim());
+}
+
+export function rendezes(ADATLISTA, osztaly) {
+    let gombok = document.querySelectorAll(".rendezes button")
+    gombok.forEach(function(gomb){
+        gomb.addEventListener("click", function(event){
+            console.log(event.target.id)
+            switch (event.target.id) {
+                case "ar_no":
+                    ADATLISTA.sort(function (a,b) {
+                        return arSzam(a.ar) - arSzam(b.ar);
+                    });
+                    tablazatFeltoltes(ADATLISTA, osztaly);
+                    kartyakFeltoltes(ADATLISTA,osztaly);
+                    break;
+
+                case "ar_csokk":
+                    ADATLISTA.sort(function (a,b) {
+                        return arSzam(b.ar) - arSzam(a.ar);
+                    });
+                    tablazatFeltoltes(ADATLISTA, osztaly);
+                    kartyakFeltoltes(ADATLISTA,osztaly);
+                    break;
+                case "nev_no":
+                    ADATLISTA.sort(function (a,b) {
+                    return a.nev > b.nev ? 1:-1;
+                    })
+                    tablazatFeltoltes(ADATLISTA, osztaly);
+                    kartyakFeltoltes(ADATLISTA,osztaly);
+                    break;
+                case "nev_csokk":
+                    ADATLISTA.sort(function (a,b) {
+                    return a.nev < b.nev ? 1:-1;
+                    })
+                    tablazatFeltoltes(ADATLISTA, osztaly);
+                    kartyakFeltoltes(ADATLISTA,osztaly);
+                    break;
+            
+                default:
+                    break;
+            }
+        })
+        
+    })
+}
