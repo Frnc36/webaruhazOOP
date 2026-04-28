@@ -1,4 +1,6 @@
-import { ADATLISTA } from "./adat.js";
+import Services from "./Services.js";
+
+
 import {
   tablazatFeltoltes,
   minusGomb,
@@ -16,21 +18,34 @@ import {
 
 import Termekek from "./Termekek.js";
 
-kartyakFeltoltes(ADATLISTA);
-szuresek(ADATLISTA, Termekek);
-rendezes(ADATLISTA,Termekek);
-kosarInit(ADATLISTA);
+
 
 /* Admin */
 
 import Aruk from "./Aruk.js";
 
-tablazatFeltoltes(ADATLISTA, Aruk);
 sajatEsemeny();
-minusGomb(ADATLISTA);
-plusGGomb(ADATLISTA);
 torlesGomb();
 visszaGomb();
+const services = new Services();
+services.getAdat('http://localhost:3000/api/termekek',termekMegjelenit)
+
+let taroloElem = document.querySelector("#termekLista");
+
+let ADATLISTA=[];
+
+function termekMegjelenit(data){
+    ADATLISTA = data;
+   
+    kartyakFeltoltes(ADATLISTA);
+szuresek(ADATLISTA, Termekek);
+rendezes(ADATLISTA,Termekek);
+kosarInit(ADATLISTA);
+tablazatFeltoltes(ADATLISTA, Aruk);
+
+minusGomb(ADATLISTA);
+plusGGomb(ADATLISTA);
+
 szuresek(ADATLISTA, Aruk);
 rendezes(ADATLISTA,Aruk);
-
+}
